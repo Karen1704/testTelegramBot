@@ -1,27 +1,18 @@
-import 'dotenv/config'
+import { Bot } from 'grammy'
+import { env } from '../src/utils/env.js'
 
-const BOT_TOKEN = process.env.BOT_TOKEN!
-const WEBHOOK_URL = process.env.WEBHOOK_URL!
-const WEBHOOK_SECRET = process.env.WEBHOOK_SECRET!
+const bot = new Bot(env.BOT_TOKEN)
 
 async function main() {
-    const url = `https://api.telegram.org/bot${BOT_TOKEN}/setWebhook`
-
-    const res = await fetch(url, {
-        method: 'POST',
-        headers: {
-            'content-type': 'application/json',
-        },
-        body: JSON.stringify({
-            url: WEBHOOK_URL,
-            secret_token: WEBHOOK_SECRET,
-            allowed_updates: ['message'],
-            drop_pending_updates: true
-        }),
-    })
-
-    const data = await res.json()
-    console.log(data)
+    try {
+        await bot.api.setWebhook(env.WEBHOOK_URL, {
+            secret_token: env.WEBHOOK_SECRET,          // must match your env
+            allowed_updates: ['message', 'callback_query'] // include all types you use
+        })
+        console.log('Webhook set successfully!')
+    } catch (err) {
+        console.error('Failed to set webhook:', err)
+    }
 }
 
-main().catch(console.error)
+main()
