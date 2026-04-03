@@ -1,4 +1,4 @@
-import { bot } from "./bot.js";
+import {bot} from "./bot.js";
 
 async function main() {
     console.log("Bot is running locally with polling...");
