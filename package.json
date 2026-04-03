@@ -4,12 +4,11 @@
   "type": "module",
   "scripts": {
     "dev": "tsx watch src/local.ts",
-    "build": "echo 'skip build for static site'",
     "set:webhook": "tsx scripts/setWebhook.ts"
   },
   "dependencies": {
-    "grammy": "^2.25.0",
-    "dotenv": "^16.3.1"
+    "dotenv": "^16.3.1",
+    "grammy": "^1.41.1"
   },
   "devDependencies": {
     "@types/node": "^20.5.1",
