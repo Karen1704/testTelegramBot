@@ -27,7 +27,6 @@ bot.callbackQuery('help', async (ctx) => {
 bot.callbackQuery('profile', async (ctx) => {
     await ctx.answerCallbackQuery()
     const user = ctx.from
-
     await ctx.reply(
         `👤 Profile\n\n` +
         `ID: ${user.id}\n` +
@@ -38,8 +37,6 @@ bot.callbackQuery('profile', async (ctx) => {
 
 bot.on('message:text', async (ctx) => {
     const text = ctx.message.text
-
     if (text.startsWith('/')) return
-
     await ctx.reply(`You said: ${text}`)
 })
