@@ -1,18 +1,16 @@
-import { Bot } from 'grammy'
-import { env } from '../src/utils/env.js'
+import { bot } from "../src/bot.js";
+import { env } from "../src/utils/env.js";
 
-const bot = new Bot(env.BOT_TOKEN)
-
-async function main() {
+async function setWebhook() {
+    const url = `${process.env.WEBHOOK_URL ? `https://${process.env.WEBHOOK_URL}` : "http://localhost:3000"}/api/webhook`;
     try {
-        await bot.api.setWebhook(env.WEBHOOK_URL, {
-            secret_token: env.WEBHOOK_SECRET,          // must match your env
-            allowed_updates: ['message', 'callback_query'] // include all types you use
-        })
-        console.log('Webhook set successfully!')
+        const result = await bot.api.setWebhook(url, {
+            secret_token: env.WEBHOOK_SECRET
+        });
+        console.log(result);
     } catch (err) {
-        console.error('Failed to set webhook:', err)
+        console.error(err);
     }
 }
 
-main()
+setWebhook();

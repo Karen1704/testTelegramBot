@@ -1,13 +1,5 @@
-import type { Context } from 'grammy'
-import { mainKeyboard } from '../keyboards/main.js'
+import { Context } from "grammy";
 
 export async function startCommand(ctx: Context) {
-    const firstName = ctx.from?.first_name || 'friend'
-
-    await ctx.reply(
-        `Hello, ${firstName} 👋\n\nWelcome to your Telegram bot .`,
-        {
-            reply_markup: mainKeyboard(),
-        }
-    )
+    await ctx.reply("Hello! I am your Telegram bot.");
 }

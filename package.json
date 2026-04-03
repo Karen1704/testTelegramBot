@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "build": "tsc",
     "dev": "tsx watch src/local.ts",
+    "build": "tsc",
     "set:webhook": "tsx scripts/setWebhook.ts"
   },
   "dependencies": {

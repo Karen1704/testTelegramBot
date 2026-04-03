@@ -1,8 +1,8 @@
-import { bot } from './bot.js' //TS2307: Cannot find module ./bot.ts or its corresponding type declarations.
+import { bot } from "./bot.js";
 
 async function main() {
-    console.log('Bot is running locally with polling...')
-    await bot.start()
+    console.log("Bot is running locally with polling...");
+    await bot.start();
 }
 
-main().catch(console.error)
+main().catch(console.error);
