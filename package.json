@@ -4,7 +4,6 @@
   "type": "module",
   "scripts": {
     "dev": "tsx watch src/local.ts",
-    "vercel:dev": "vercel dev",
     "set:webhook": "tsx scripts/setWebhook.ts",
     "build": "tsc"
   },
@@ -14,6 +13,7 @@
   },
   "devDependencies": {
     "@types/node": "^24.3.0",
+    "@types/node-fetch": "^2.6.13",
     "tsx": "^4.20.5",
     "typescript": "^5.9.2"
   }
