@@ -1,12 +1,14 @@
 {
   "compilerOptions": {
     "target": "ES2022",
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
-    "strict": true,
+    "module": "ESNext",
+    "moduleResolution": "Node16",
+    "outDir": "dist",
     "esModuleInterop": true,
-    "skipLibCheck": true,
-    "outDir": "dist"
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true
   },
-  "include": ["api", "src", "scripts"]
+  "include": ["src", "scripts", "api"]
 }

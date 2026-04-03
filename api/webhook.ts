@@ -1,4 +1,5 @@
 import { webhookCallback } from 'grammy'
+// Node runtime on Vercel needs .js extension in ESM
 import { bot } from '../src/bot.js'
 import { env } from '../src/utils/env.js'
 
@@ -15,7 +16,7 @@ export default async function (req: Request): Promise<Response> {
     }
 
     try {
-        await handler(req) // ✅ wait for the bot to process the update
+        await handler(req)
         return new Response('ok')
     } catch (err) {
         console.error('Telegram webhook error:', err)
