@@ -1,0 +1,19 @@
+{
+  "name": "tgbot",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/local.ts",
+    "vercel:dev": "vercel dev",
+    "set:webhook": "tsx scripts/setWebhook.ts"
+  },
+  "dependencies": {
+    "dotenv": "^16.6.1",
+    "grammy": "^1.38.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.3.0",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2"
+  }
+}
