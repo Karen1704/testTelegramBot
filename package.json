@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "tsx watch src/local.ts",
     "set:webhook": "tsx scripts/setWebhook.ts",
-    "build": "tsc",
+    "build": "tsc && echo 'skip static build'",
     "vercel-build": "echo 'skip static build'"
   },
   "dependencies": {
