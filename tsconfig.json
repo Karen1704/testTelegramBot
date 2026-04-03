@@ -8,5 +8,5 @@
     "strict": true,
     "forceConsistentCasingInFileNames": true
   },
-  "include": ["src", "api", "scripts", "src/types"]
+  "include": ["src", "api", "scripts"]
 }
