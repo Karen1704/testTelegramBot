@@ -10,10 +10,15 @@ export default async function (req: Request): Promise<Response> {
     }
 
     const secret = req.headers.get('x-telegram-bot-api-secret-token')
-
     if (secret !== env.WEBHOOK_SECRET) {
         return new Response('Unauthorized', { status: 401 })
     }
 
-    return handler(req)
+    try {
+        await handler(req) // ✅ wait for the bot to process the update
+        return new Response('ok')
+    } catch (err) {
+        console.error('Telegram webhook error:', err)
+        return new Response('Internal Server Error', { status: 500 })
+    }
 }
