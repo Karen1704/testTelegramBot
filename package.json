@@ -4,7 +4,6 @@
   "type": "module",
   "scripts": {
     "dev": "tsx watch src/local.ts",
-    "build": "echo 'skip build for static site'",
     "set:webhook": "tsx scripts/setWebhook.ts"
   },
   "dependencies": {
