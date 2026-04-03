@@ -1,7 +1,6 @@
 {
   "functions": {
     "api/webhook.ts": {
-      "runtime": "nodejs18",
       "maxDuration": 10
     }
   }
